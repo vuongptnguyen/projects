@@ -32,12 +32,12 @@ if(!empty($_POST)) {
         { 
             die("This user id has been used."); 
         } 
-        
     
-    //$hash = password_hash('$password', PASSWORD_DEFAULT);
+	//hashing password with Bcrypt
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     
   // An INSERT query is used to add new rows to a database table.
-       $query = "INSERT INTO Users (user_id, password) VALUES ('$userid', '$password')";
+       $query = "INSERT INTO Users (user_id, password) VALUES ('$userid', '$hash')";
         $result = $conn->query($query); 
         
         if(!$result) { 

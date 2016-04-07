@@ -23,15 +23,9 @@
         
         //verify password
         if($row) {
-            if($password === $row['password']){
-                $loginCheck = true;
-            }
-            //NOT WORKING = FRUSTRATION////////////////////////////
-            /*
             if(password_verify($password, $hash)) {
                 $loginCheck = true;
-            } */
-            //////////////////////////////////////////////////
+            } 
         } 
     
         if ($loginCheck) {
